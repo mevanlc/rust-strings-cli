@@ -24,9 +24,10 @@ Globbing is done via [glob.glob](https://docs.python.org/3/library/glob.html#glo
 
 ```
   -a, --abs-path               Always report absolute paths.
-                                  Otherwise paths that are children of the CWD are relativized to the CWD.
-  -e, --encodings <encs>       Comma-separated list of encodings to consider while searching for strings
-                                  (default: ascii,utf8)
+                                  Otherwise paths that are children of the CWD
+                                  are relativized to the CWD.
+  -e, --encodings <encs>       Comma-separated list of encodings to consider while
+                                  searching for strings  (default: ascii,utf8)
   -m, --min <length>           Exclude strings shorter than this length (default: 3)
   -M, --max <length>           Exclude strings longer than this length (default: 256)
   -o, --output <file>          Write results to <file>. Output is written as UTF-8.
@@ -50,11 +51,20 @@ Globbing is done via [glob.glob](https://docs.python.org/3/library/glob.html#glo
 
 ---
 
-## Libraries used
-
+## Implementation 
+### Libraries used
 * [Typer](https://github.com/tiangolo/typer) – argument parsing and error reporting  
 * [Rich](https://github.com/Textualize/rich) – table formatting  
-* Python 3 stdlib: [`glob`](https://docs.python.org/3/library/glob.html), [`re`](https://docs.python.org/3/library/re.html), etc.  
+* Python 3 stdlib: [`glob`](https://docs.python.org/3/library/glob.html), [`re`](https://docs.python.org/3/library/re.html), etc.
+###
+* Project definition - `pyproject.toml`
+* Build - `pdm`
+* Build versioning - `pdm`
+ ```
+[tool.pdm.version]
+source = "scm"
+```
+* Build publishing (PyPI, TestPyPI) - `pdm`
 
 ---
 
